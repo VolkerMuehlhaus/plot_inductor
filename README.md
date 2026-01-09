@@ -25,7 +25,10 @@ example:
 python plot_inductor.py measured.s2p simulated.s2p simulated2.s2p
 ```
 
+The tool plots the effective L, Q and R in differential mode operation ...
 ![plot](./doc/png/RLQ.png)
+
+... and the extracted effective series and shunt path elements over frequency.
 
 ![plot](./doc/png/elements.png)
 
