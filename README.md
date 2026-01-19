@@ -40,8 +40,8 @@ python plot_snp.py measured.s2p simulated.s2p S11 S21
 
 ```
 
-The tool plots all files with the specified paramerter(s)
-![plot](./doc/png/plot_snp.png.png)
+The tool plots all files with the specified parameter(s)
+![plot](./doc/png/plot_snp.png)
 
 
 
