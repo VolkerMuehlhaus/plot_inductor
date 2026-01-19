@@ -27,10 +27,10 @@ The tool plots the effective L, Q and R in differential mode operation ...
 
 # plot_snp
 
-plot_snp reads one or more S-parameter files with any number 2 ports (*.s*p) 
+plot_snp reads one or more S-parameter files with any number of ports (*.s*p) 
 and plots magnitude (dB) and phase of all selected parameters.
 
-To run the inductor plot and analysis, specify the *.snp file(s) and the requested S-parameters as commandline parameter. Order does not matter.
+To run the inductor plot and analysis, specify the *.snp file(s) and the requested S-parameters as commandline parameter. Order does not matter. Default is S11.
 
 example:
 ```
