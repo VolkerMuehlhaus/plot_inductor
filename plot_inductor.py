@@ -58,11 +58,14 @@ def get_diff_model (sub):
 
 
 # find value of SRF where L=0 for first file
-network = networks[0]
-freq0, Rdiff0, Ldiff0, Qdiff0 = get_diff_model(network[fspec])
-Lmin = Ldiff0[1]*1e9
-Rmin = Rdiff0[1]
-Qmax = max (Qdiff0)
+Lmin = math.inf
+Rmin = math.inf
+Qmax = 0
+for network in networks:
+    freq0, Rdiff0, Ldiff0, Qdiff0 = get_diff_model(network[fspec])
+    Lmin = min(Lmin, Ldiff0[1]*1e9)
+    Rmin = min(Rmin, Rdiff0[1])
+    Qmax = max (Qmax, max(Qdiff0))
 
 
 srf_index = rf.find_nearest_index(Ldiff0,min(Ldiff0))
