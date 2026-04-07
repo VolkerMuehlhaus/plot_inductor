@@ -94,7 +94,7 @@ ax.set_xlim (0, plot_fmax_ghz)
 for n,network in enumerate(networks):
     nw = network[fspec]
     freq, Rdiff, Ldiff, Qdiff = get_diff_model(nw[fspec])
-    ax.plot(freq / 1e9, Ldiff*1e9, color = colors[n], linestyle=linestyles[n], label=nw.name)
+    ax.plot(freq / 1e9, Ldiff*1e9, color = colors[n %8], linestyle=linestyles[n %8], label=nw.name)
 ax.set_xlabel("Frequency (GHz)")
 ax.set_ylabel("Diff. Inductance (nH)")
 ax.set_xmargin(0)
@@ -110,7 +110,7 @@ ax.set_xlim (0, plot_fmax_ghz)
 for n,network in enumerate(networks):
     nw = network[fspec]
     freq, Rdiff, Ldiff, Qdiff = get_diff_model(nw[fspec])
-    ax.plot(freq / 1e9, Qdiff, color = colors[n], linestyle=linestyles[n], label=nw.name)
+    ax.plot(freq / 1e9, Qdiff, color = colors[n %8], linestyle=linestyles[n %8], label=nw.name)
 ax.set_xlabel("Frequency (GHz)")
 ax.set_ylabel("Diff. Q factor")
 ax.set_xmargin(0)
@@ -126,7 +126,7 @@ ax.set_xlim (0, plot_fmax_ghz)
 for n,network in enumerate(networks):
     nw = network[fspec]
     freq, Rdiff, Ldiff, Qdiff = get_diff_model(nw[fspec])
-    ax.plot(freq / 1e9, Rdiff, color = colors[n], linestyle=linestyles[n], label=nw.name)
+    ax.plot(freq / 1e9, Rdiff, color = colors[n %8], linestyle=linestyles[n %8], label=nw.name)
 ax.set_xlabel("Frequency (GHz)")
 ax.set_ylabel("Diff. Resistance (Ohm)")
 ax.set_xmargin(0)
@@ -147,7 +147,7 @@ ax.set_xlim (0, freq0[Rs_index]/1e9)
 for n,network in enumerate(networks):
     nw = network[fspec]
     freq, Rdiff, Ldiff, Qdiff = get_diff_model(nw[fspec])
-    ax.plot(nw.frequency.f / 1e9, Rdiff, color = colors[n], linestyle=linestyles[n], label=nw.name)
+    ax.plot(nw.frequency.f / 1e9, Rdiff, color = colors[n %8], linestyle=linestyles[n %8], label=nw.name)
 ax.set_xlabel("Frequency (GHz)")
 ax.set_ylabel("Diff. Resistance (Ohm)")
 ax.set_xmargin(0)
@@ -206,7 +206,7 @@ for n,network in enumerate(networks):
     if network.number_of_ports == 2:
         nw = network[fspec]
         freq, Rseries, Lseries, Cshunt1, Cshunt2, Rshunt = get_pi_model(nw)
-        ax.plot(freq / 1e9, Lseries*1e9, color = colors[n], linestyle=linestyles[n], label=nw.name)
+        ax.plot(freq / 1e9, Lseries*1e9, color = colors[n %8], linestyle=linestyles[n %8], label=nw.name)
 ax.set_xlabel("Frequency (GHz)")
 ax.set_ylabel("Series path L (nH)")
 ax.set_xmargin(0)
@@ -223,7 +223,7 @@ for n,network in enumerate(networks):
     if network.number_of_ports == 2:
         nw = network[fspec]
         freq, Rseries, Lseries, Cshunt1, Cshunt2, Rshunt = get_pi_model(nw)
-        ax.plot(freq / 1e9, Rseries, color = colors[n], linestyle=linestyles[n], label=nw.name)
+        ax.plot(freq / 1e9, Rseries, color = colors[n %8], linestyle=linestyles[n %8], label=nw.name)
 ax.set_xlabel("Frequency (GHz)")
 ax.set_ylabel("Series path tesistance (Ohm)")
 ax.set_xmargin(0)
@@ -250,7 +250,7 @@ for n,network in enumerate(networks):
     if network.number_of_ports == 2:
         nw = network[fspec]
         freq, Rseries, Lseries, Cshunt1, Cshunt2, Rshunt = get_pi_model(nw)
-        ax.plot(freq / 1e9, Cshunt1*1e15, color = colors[n], linestyle=linestyles[n], label=nw.name)
+        ax.plot(freq / 1e9, Cshunt1*1e15, color = colors[n %8], linestyle=linestyles[n %8], label=nw.name)
 ax.set_xlabel("Frequency (GHz)")
 ax.set_ylabel("Shunt path Capacitance 1 (fF)")
 ax.set_xmargin(0)
@@ -266,7 +266,7 @@ for n,network in enumerate(networks):
     if network.number_of_ports == 2:
         nw = network[fspec]
         freq, Rseries, Lseries, Cshunt1, Cshunt2, Rshunt = get_pi_model(nw)
-        ax.plot(freq / 1e9, Cshunt2*1e15, color = colors[n], linestyle=linestyles[n], label=nw.name)
+        ax.plot(freq / 1e9, Cshunt2*1e15, color = colors[n %8], linestyle=linestyles[n %8], label=nw.name)
 ax.set_xlabel("Frequency (GHz)")
 ax.set_ylabel("Shunt path Capacitance 2 (fF)")
 ax.set_xmargin(0)
@@ -280,7 +280,7 @@ ax.set_ylim (0, 20*Rmin)
 for n,network in enumerate(networks):
     nw = network[fspec]
     freq, Rseries, Lseries, Cshunt1, Cshunt2, Rshunt = get_pi_model(nw)
-    ax.plot(freq / 1e9, Rshunt, color = colors[n], linestyle=linestyles[n], label=nw.name)
+    ax.plot(freq / 1e9, Rshunt, color = colors[n %8], linestyle=linestyles[n %8], label=nw.name)
 ax.set_xlabel("Frequency (GHz)")
 ax.set_ylabel("Shunt path resistance (Ohm)")
 ax.set_xmargin(0)
