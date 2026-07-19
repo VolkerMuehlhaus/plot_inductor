@@ -68,7 +68,7 @@ for network in networks:
     Qmax = max (Qmax, max(Qdiff0))
 
 
-srf_index = rf.find_nearest_index(Ldiff0,min(Ldiff0))
+srf_index = rf.util.find_nearest_index(Ldiff0,min(Ldiff0))
 if srf_index>20:
 	# limit plots slightly above SRF
 	print('SRF found at index ', srf_index, ' f=', freq0[srf_index]/1e9, ' GHz')
@@ -139,8 +139,8 @@ ax = axes[1,1]
 ax.set_ylim (0.5*Rmin, 3*Rmin)
 
 network = networks[0]
-Rs = rf.find_nearest(Rdiff0, 3*Rmin)
-Rs_index = rf.find_nearest_index(Rdiff0,Rs)
+Rs = rf.util.find_nearest(Rdiff0, 3*Rmin)
+Rs_index = rf.util.find_nearest_index(Rdiff0,Rs)
 ax.set_xlim (0, freq0[Rs_index]/1e9)
 
 
